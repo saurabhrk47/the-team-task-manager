@@ -123,25 +123,6 @@ PUT /api/tasks/:id → Update Task
 
 DELETE /api/tasks/:id → Delete Task
 
-📸 Screenshots
-Add screenshots of your project here.
-
-🔥 Future Improvements
-Real-time Notifications
-
-Task Deadlines & Reminders
-
-File Upload Support
-
-Admin Dashboard
-
-Dark Mode
-
-🤝 Contributing
-Contributions are welcome.
-
-Fork the repository and create a pull request.
-
 📄 License
 This project is for educational and portfolio purposes.
 
