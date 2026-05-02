@@ -29,7 +29,7 @@ function CreateTask() {
     try {
 
       await axios.post(
-        "https://tender-kindness-production.up.railway.app/",
+        "https://tender-kindness-production.up.railway.app/api/tasks",
         formData
       );
 
