@@ -12,10 +12,12 @@ function Login() {
   });
 
   const handleChange = (e) => {
+
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
+
   };
 
   const handleSubmit = async (e) => {
@@ -24,10 +26,10 @@ function Login() {
 
     try {
 
-      await axios.post(
-  "https://tender-kindness-production.up.railway.app/api/auth/login",
-  formData
-);
+      const res = await axios.post(
+        "https://tender-kindness-production.up.railway.app/api/auth/login",
+        formData
+      );
 
       localStorage.setItem("token", res.data.token);
 
@@ -38,9 +40,11 @@ function Login() {
       alert("Login Failed");
 
     }
+
   };
 
   return (
+
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-500 p-6">
 
       <div className="backdrop-blur-lg bg-white/20 border border-white/30 shadow-2xl rounded-3xl p-10 w-full max-w-md">
@@ -96,7 +100,9 @@ function Login() {
       </div>
 
     </div>
+
   );
+
 }
 
 export default Login;
