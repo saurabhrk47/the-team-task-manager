@@ -28,9 +28,9 @@ function Register() {
     try {
 
       await axios.post(
-        "https://tender-kindness-production.up.railway.app/",
-        formData
-      );
+  "https://tender-kindness-production.up.railway.app/api/auth/register",
+  formData
+);
 
       alert("Registration successful");
 
