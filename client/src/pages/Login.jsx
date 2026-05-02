@@ -24,10 +24,10 @@ function Login() {
 
     try {
 
-      const res = await axios.post(
-        "https://tender-kindness-production.up.railway.app/",
-        formData
-      );
+      await axios.post(
+  "https://tender-kindness-production.up.railway.app/api/auth/login",
+  formData
+);
 
       localStorage.setItem("token", res.data.token);
 
