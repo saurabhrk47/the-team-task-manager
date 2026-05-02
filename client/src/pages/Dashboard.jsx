@@ -30,7 +30,7 @@ function Dashboard() {
     try {
 
       const res = await axios.get(
-        "https://tender-kindness-production.up.railway.app/"
+        "https://tender-kindness-production.up.railway.app/",
       );
 
       setTasks(res.data);
