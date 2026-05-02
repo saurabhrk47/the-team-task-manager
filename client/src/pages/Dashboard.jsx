@@ -24,13 +24,12 @@ function Dashboard() {
 
   }, []);
 
-
   const fetchTasks = async () => {
 
     try {
 
       const res = await axios.get(
-        "https://tender-kindness-production.up.railway.app/",
+        "https://tender-kindness-production.up.railway.app/api/tasks"
       );
 
       setTasks(res.data);
@@ -40,15 +39,15 @@ function Dashboard() {
       console.log(error);
 
     }
-  };
 
+  };
 
   const updateStatus = async (id, status) => {
 
     try {
 
       await axios.put(
-        `/tasks/${id}`,
+        `https://tender-kindness-production.up.railway.app/api/tasks/${id}`,
         { status }
       );
 
@@ -59,8 +58,8 @@ function Dashboard() {
       alert("Status update failed");
 
     }
-  };
 
+  };
 
   const handleLogout = () => {
 
@@ -70,8 +69,8 @@ function Dashboard() {
 
   };
 
-
   return (
+
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-indigo-900 to-slate-800 p-8 text-white">
 
       <div className="flex justify-between items-center mb-10">
@@ -87,7 +86,6 @@ function Dashboard() {
           </p>
 
         </div>
-
 
         <div className="flex gap-4">
 
@@ -108,7 +106,6 @@ function Dashboard() {
         </div>
 
       </div>
-
 
       {
         tasks.length === 0 ? (
@@ -145,7 +142,6 @@ function Dashboard() {
                     {task.description}
                   </p>
 
-
                   <span
                     className={`px-4 py-2 rounded-full text-sm font-semibold
                     ${
@@ -158,7 +154,6 @@ function Dashboard() {
                   >
                     {task.status}
                   </span>
-
 
                   <div className="mt-5">
 
@@ -197,7 +192,9 @@ function Dashboard() {
       }
 
     </div>
+
   );
+
 }
 
 export default Dashboard;
